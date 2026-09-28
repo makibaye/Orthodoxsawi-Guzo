@@ -1,0 +1,5 @@
+# Node modules
+node_modules/
+
+# Expo local development state
+.expo/

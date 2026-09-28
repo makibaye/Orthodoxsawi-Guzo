@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "Orthodoxawi Guzo",
+    "slug": "orthodoxawi-guzo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "splash": {
+      "image": "./Asset/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0E3D59"
+    },
+    "android": {
+      "package": "com.orthodoxawi.guzo",
+      "icon": "./Asset/icon.png",
+      "adaptiveIcon": {
+        "backgroundColor": "#0E3D59",
+        "foregroundImage": "./Asset/icon.png"
+      }
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.orthodoxawi.guzo"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c624ffca-5520-4f43-a567-860ec2db8a99"
+      }
+    },
+    "plugins": [
+      "expo-font",
+      "@react-native-community/datetimepicker"
+    ]
+  }
+}
