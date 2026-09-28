@@ -31,6 +31,9 @@
     "socket.io-client": "^4.8.1"
   },
   "scripts": {
-    "start": "react-scripts start"
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web"
   }
 }
