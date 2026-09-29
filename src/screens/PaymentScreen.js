@@ -477,7 +477,7 @@ export default function PaymentScreen({ route, navigation }) {
                             <View style={styles.priceContainer}>
                                 <Text style={styles.priceLabel}>Price per person</Text>
                                 <Text style={styles.priceValue}>
-                                    ${pricePerPerson.toFixed(2)}
+                                    {pricePerPerson} Birr
                                 </Text>
                             </View>
                         </View>
@@ -526,7 +526,7 @@ export default function PaymentScreen({ route, navigation }) {
                         <View style={styles.totalContainer}>
                             <Text style={styles.totalLabel}>Total Amount</Text>
                             <Text style={styles.totalPrice}>
-                                ${totalPrice.toFixed(2)}
+                                {totalPrice} Birr
                             </Text>
                         </View>
 
@@ -788,7 +788,7 @@ export default function PaymentScreen({ route, navigation }) {
                             </Text>
                             <Text style={styles.successRow}>
                                 <Text style={styles.successLabel}>Total: </Text>
-                                ${successData?.totalPrice || '0.00'}
+                                {successData?.totalPrice || '0.00'} Birr
                             </Text>
                         </View>
 

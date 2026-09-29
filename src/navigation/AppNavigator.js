@@ -5,11 +5,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Icon from 'react-native-vector-icons/Ionicons';
-
 import HomeScreen from '../screens/HomeScreen';
 import ToursListScreen from '../screens/ToursListScreen';
 import PaymentScreen from '../screens/PaymentScreen';
 import TripDetails from '../screens/TripDetails';
+import MockPaymentScreen from '../screens/MockpaymentScreen';
 import { colors } from '../styles/theme';
 import { onboardingSlides } from '../constants/onboarding';
 import { onboardingStyles } from '../styles/onboardingStyles';
@@ -27,7 +27,7 @@ function MainTabs() {
             iconName = focused ? 'home' : 'home-outline';
           } else if (route.name === 'Tours') {
             iconName = focused ? 'map' : 'map-outline';
-          } else if (route.name === 'Payment') {
+          } else if (route.name === 'MockPayment') {
             iconName = focused ? 'card' : 'card-outline';
           }
           return <Icon name={iconName} size={size + 2} color={color} />;
@@ -42,6 +42,7 @@ function MainTabs() {
           borderTopColor: colors.border,
           height: 64,
           paddingBottom: 8,
+          marginBottom: 30,
           paddingTop: 6,
           position: 'absolute',
           left: 0,
@@ -83,8 +84,8 @@ function MainTabs() {
         options={{ tabBarLabel: 'ገዳማት' }}
       />
       <Tab.Screen
-        name="Payment"
-        component={PaymentScreen}
+        name="MockPayment"
+        component={MockPaymentScreen}
         options={{ tabBarLabel: 'ክፍያ' }}
       />
     </Tab.Navigator>
@@ -211,6 +212,7 @@ export default function AppNavigator() {
             animation: 'slide_from_right',
           }}
         />
+            
       </Stack.Navigator>
     </NavigationContainer>
   );

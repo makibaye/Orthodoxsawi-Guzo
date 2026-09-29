@@ -126,7 +126,7 @@ export default function TripDetails({ navigation, route }) {
             'Would you like to call us for more information about this trip?',
             [
                 { text: 'Cancel', style: 'cancel' },
-                { text: 'Call', onPress: () => Linking.openURL('tel:+251911465991') }
+                { text: 'Call', onPress: () => Linking.openURL('tel:+251943733060') }
             ]
         );
     };
@@ -135,6 +135,24 @@ export default function TripDetails({ navigation, route }) {
         navigation.navigate('Payment', { trip });
     };
 
+    const handleTelegramSupport = async () => {
+        const username = 'Orthodoxawiguzo';
+        const telegramDeepLink = `tg://resolve?domain=${username}`;
+        const telegramWebLink = `https://t.me/${username}`;
+
+        try {
+            const canOpenTelegram = await Linking.canOpenURL(telegramDeepLink);
+            if (canOpenTelegram) {
+                await Linking.openURL(telegramDeepLink);
+                return;
+            }
+
+            await Linking.openURL(telegramWebLink);
+        } catch (error) {
+            console.error('Telegram support error:', error);
+            Alert.alert('Telegram', 'Unable to open Telegram right now. Please try again later.');
+        }
+    };
 
     return (
         <SafeAreaView style={styles.safeArea}>
@@ -298,9 +316,7 @@ export default function TripDetails({ navigation, route }) {
                             </TouchableOpacity>
                             <TouchableOpacity
                                 style={[styles.contactButton, styles.contactButtonPrimary]}
-                                onPress={() => {
-                                    Alert.alert('Contact', 'Contact support functionality coming soon!');
-                                }}
+                                onPress={handleTelegramSupport}
                             >
                                 <Icon name="chatbubble-outline" size={20} color="#fff" />
                                 <Text style={[styles.contactButtonText, styles.contactButtonTextPrimary]}>
